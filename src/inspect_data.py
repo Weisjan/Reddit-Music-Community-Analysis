@@ -2,7 +2,7 @@ import zstandard as zstd
 import json
 import io
 
-filename = "data/raw/Music_comments.zst"
+filename = "data\\raw\\Music_submissions.zst"   # wpisz nazwę swojego pliku
 
 with open(filename, "rb") as f:
     dctx = zstd.ZstdDecompressor()
@@ -14,10 +14,8 @@ with open(filename, "rb") as f:
 
             data = json.loads(line)
 
-            print("subreddit:", data.get("subreddit"))
-            print("author:", data.get("author"))
-            print("text:", data.get("body") or data.get("title"))
-            print("-"*50)
+            print("=== RECORD ===")
+            print(data)
 
-            if i >= 5:
+            if i >= 2:
                 break
