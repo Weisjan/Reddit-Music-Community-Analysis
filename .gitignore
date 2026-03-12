@@ -181,7 +181,8 @@ cython_debug/
 .cursorindexingignore
 
 # large datasets
-*.zst
-data/raw
-data/processed
-datasets/
+
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
