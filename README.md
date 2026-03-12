@@ -7,9 +7,11 @@ Komentarze pobrane z Pushshift Reddit Dataset:
 https://the-eye.eu/redarcs/
 
 ## Struktura
+```
 data/
 ├── raw/          # pliki .zst pobrane z Pushshift
 └── processed/    # CSV-ki wygenerowane przez src/extract_data.py
+```
 
 ## Jak odtworzyć
 1. Pobierz pliki .zst i umieść w data/raw/
