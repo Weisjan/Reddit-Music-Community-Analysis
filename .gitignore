@@ -183,4 +183,5 @@ cython_debug/
 # large datasets
 *.zst
 data/raw
+data/processed
 datasets/
