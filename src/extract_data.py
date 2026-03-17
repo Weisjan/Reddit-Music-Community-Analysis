@@ -17,11 +17,11 @@ output_dir = Path("data/processed")
 output_dir.mkdir(parents=True, exist_ok=True)
 
 # zmień żeby pobrać więcej danych (None = wszystko)
-LIMIT = 10_000
+LIMIT = None
 
-# wspólny okres dla wszystkich subredditów (wyznaczony przez scan_dates.py)
-date_start = datetime(2015, 8, 1, tzinfo=timezone.utc)
-date_end   = datetime(2022, 12, 31, tzinfo=timezone.utc)
+# okres analizy
+date_start = datetime(2020, 3, 11, tzinfo=timezone.utc)
+date_end   = datetime(2021, 3, 11, tzinfo=timezone.utc)
 
 ts_start = int(date_start.timestamp())
 ts_end   = int(date_end.timestamp())
@@ -94,8 +94,7 @@ def read_comments(file_path, limit=None):
     return rows
 
 
-all_dfs = []
-
+# zapisujemy każdy subreddit osobno i zwalniamy pamięć
 for file_path in input_files:
     print(f"Przetwarzam: {file_path}")
 
@@ -105,12 +104,21 @@ for file_path in input_files:
     name = Path(file_path).stem.replace("_comments", "")
     out_path = output_dir / f"{name}_sample.csv"
     df.to_csv(out_path, index=False, encoding="utf-8-sig")
-    all_dfs.append(df)
 
-combined_df = pd.concat(all_dfs, ignore_index=True)
+    print(f"  Zapisano → {out_path}")
+    del df, rows
+
+# łączymy dopiero po zapisaniu wszystkich plików
+print("\nŁączę pliki...")
+dfs = []
+for file_path in input_files:
+    name = Path(file_path).stem.replace("_comments", "")
+    dfs.append(pd.read_csv(output_dir / f"{name}_sample.csv"))
+
+combined_df = pd.concat(dfs, ignore_index=True)
 combined_df.to_csv(output_dir / "all_subreddits_sample.csv", index=False, encoding="utf-8-sig")
+del dfs
 
-# szybki podgląd
 combined_df["date"] = pd.to_datetime(
     pd.to_numeric(combined_df["created_utc"], errors="coerce"), unit="s"
 )
