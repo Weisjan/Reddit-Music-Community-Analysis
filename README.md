@@ -8,12 +8,12 @@ Do subreddits dedicated to different music genres differ in the topics they disc
 
 ## Dataset
 
-| Subreddit     | Genre   | Comments |
-| ------------- | ------- | -------- |
-| r/hiphopheads | Hip-hop | ~110k    |
-| r/indieheads  | Indie   | ~30k     |
-| r/Metal       | Metal   | ~10k     |
-| r/popheads    | Pop     | ~70k     |
+| Subreddit     | Genre   | Comments  | Unique Authors |
+| ------------- | ------- | --------- | -------------- |
+| r/hiphopheads | Hip-hop | 1,291,468 | 110,058        |
+| r/indieheads  | Indie   | 367,958   | 51,588         |
+| r/Metal       | Metal   | 106,181   | 17,049         |
+| r/popheads    | Pop     | 778,576   | 37,077         |
 
 **Time period:** March 11, 2020 – March 11, 2021 (first year of COVID-19 pandemic)  
 **Source:** [Pushshift Reddit Dataset](https://the-eye.eu/redarcs/)
