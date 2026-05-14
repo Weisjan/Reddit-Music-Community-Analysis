@@ -1,0 +1,7 @@
+subreddit_a,subreddit_b,shared_users,share_of_a,share_of_b
+Metal,hiphopheads,663,0.039,0.006
+Metal,indieheads,472,0.0277,0.0092
+Metal,popheads,149,0.0088,0.004
+hiphopheads,indieheads,5815,0.0529,0.1129
+hiphopheads,popheads,4896,0.0445,0.1322
+indieheads,popheads,3389,0.0658,0.0915

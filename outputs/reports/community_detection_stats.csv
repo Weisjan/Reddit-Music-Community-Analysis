@@ -1,0 +1,5 @@
+subreddit,method,communities,modularity,largest_community_size,largest_community_share
+Metal,Louvain,330,0.3629,1086,0.0988
+hiphopheads,Louvain,747,0.3121,19060,0.2292
+indieheads,Louvain,726,0.4123,7917,0.2464
+popheads,Louvain,238,0.2053,5479,0.2019
