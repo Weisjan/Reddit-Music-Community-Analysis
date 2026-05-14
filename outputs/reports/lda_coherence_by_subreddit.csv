@@ -1,5 +1,5 @@
-subreddit,num_topics,coherence_cv
-Metal,7,0.967
-hiphopheads,7,0.405
-indieheads,7,0.423
-popheads,7,0.291
+subreddit,num_topics,documents_used,dictionary_size,coherence_cv
+Metal,7,10000,2492,0.514
+hiphopheads,7,10000,2122,0.471
+indieheads,7,10000,2549,0.494
+popheads,7,10000,2648,0.496
