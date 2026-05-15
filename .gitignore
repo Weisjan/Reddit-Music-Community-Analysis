@@ -189,3 +189,6 @@ data/processed/*
 
 # Agent instruction
 .github/
+
+# Checkpoints
+data/checkpoints/
