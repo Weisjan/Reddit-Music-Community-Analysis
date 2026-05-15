@@ -7,11 +7,15 @@ from datetime import datetime, timezone
 
 import zstandard as zstd
 
+BASE_DIR = Path(".")
+DATA_DIR = BASE_DIR / "data"
+RAW_DIR = DATA_DIR / "raw"
+
 input_files = [
-    "data/raw/hiphopheads_comments.zst",
-    "data/raw/indieheads_comments.zst",
-    "data/raw/Metal_comments.zst",
-    "data/raw/popheads_comments.zst",
+    RAW_DIR / "hiphopheads_comments.zst",
+    RAW_DIR / "indieheads_comments.zst",
+    RAW_DIR / "Metal_comments.zst",
+    RAW_DIR / "popheads_comments.zst",
 ]
 
 
