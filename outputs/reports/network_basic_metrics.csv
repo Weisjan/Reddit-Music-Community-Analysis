@@ -1,0 +1,5 @@
+subreddit,nodes,edges,avg_degree,max_degree,density,connected_components,largest_component_size,largest_component_share
+Metal,10996,45461,6.371,440,0.000579,286,10385,0.9444
+hiphopheads,83153,617923,11.96,4327,0.000144,668,81753,0.9832
+indieheads,32131,142887,6.978,961,0.000217,568,30905,0.9618
+popheads,27142,317417,18.537,2209,0.000683,199,26700,0.9837
