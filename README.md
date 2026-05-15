@@ -250,5 +250,3 @@ Oprócz notebooków w repozytorium znajdują się osobne pliki z wnioskami:
 - `01_eda_wnioski.md`,
 - `02_text_mining_wnioski.md`,
 - `03_network_analysis_wnioski.md`.
-
-Są one napisane w bardziej opisowej formie i mogą służyć jako materiał do rozdziałów interpretacyjnych w pracy magisterskiej.
