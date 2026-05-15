@@ -1,0 +1,5 @@
+subreddit,liczba_komentarzy,udzial_%,unikalni_autorzy,srednia_dlugosc_komentarza,mediana_dlugosci_komentarza,srednia_liczba_slow
+hiphopheads,1262005,50.63,109727,139.98,80.0,25.5
+popheads,761532,30.55,36974,200.41,110.0,35.89
+indieheads,363300,14.57,51371,180.75,105.0,31.93
+Metal,105927,4.25,16982,187.12,106.0,31.55

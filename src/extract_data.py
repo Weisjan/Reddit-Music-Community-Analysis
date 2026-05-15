@@ -6,15 +6,19 @@ from datetime import datetime, timezone
 import pandas as pd
 import zstandard as zstd
 
+BASE_DIR = Path(".")
+DATA_DIR = BASE_DIR / "data"
+RAW_DIR = DATA_DIR / "raw"
+PROCESSED_DIR = DATA_DIR / "processed"
+
 input_files = [
-    "data/raw/hiphopheads_comments.zst",
-    "data/raw/indieheads_comments.zst",
-    "data/raw/Metal_comments.zst",
-    "data/raw/popheads_comments.zst",
+    RAW_DIR / "hiphopheads_comments.zst",
+    RAW_DIR / "indieheads_comments.zst",
+    RAW_DIR / "Metal_comments.zst",
+    RAW_DIR / "popheads_comments.zst",
 ]
 
-output_dir = Path("data/processed")
-output_dir.mkdir(parents=True, exist_ok=True)
+PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 
 # zmień żeby pobrać więcej danych (None = wszystko)
 LIMIT = None
@@ -102,7 +106,7 @@ for file_path in input_files:
     df = pd.DataFrame(rows)
 
     name = Path(file_path).stem.replace("_comments", "")
-    out_path = output_dir / f"{name}_sample.csv"
+    out_path = PROCESSED_DIR / f"{name}_sample.csv"
     df.to_csv(out_path, index=False, encoding="utf-8-sig")
 
     print(f"  Zapisano → {out_path}")
@@ -113,10 +117,10 @@ print("\nŁączę pliki...")
 dfs = []
 for file_path in input_files:
     name = Path(file_path).stem.replace("_comments", "")
-    dfs.append(pd.read_csv(output_dir / f"{name}_sample.csv"))
+    dfs.append(pd.read_csv(PROCESSED_DIR / f"{name}_sample.csv"))
 
 combined_df = pd.concat(dfs, ignore_index=True)
-combined_df.to_csv(output_dir / "all_subreddits_sample.csv", index=False, encoding="utf-8-sig")
+combined_df.to_csv(PROCESSED_DIR / "all_subreddits_sample.csv", index=False, encoding="utf-8-sig")
 del dfs
 
 combined_df["date"] = pd.to_datetime(
