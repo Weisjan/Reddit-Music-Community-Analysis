@@ -47,8 +47,6 @@ Folder `figures/` znajduje się w `outputs/figures`, a folder `reports/` w `outp
 
 ## Notebooki
 
-Główne wersje notebooków mają dopisek `_uporzadkowany`. Starsze, robocze wersje notebooków nie są już częścią aktualnego przepływu pracy.
-
 | Notebook | Cel | Najważniejsze wyniki |
 | -------- | --- | -------------------- |
 | `01_eda_uporzadkowany.ipynb` | Wstępne rozpoznanie danych i aktywności w społecznościach. | Liczba komentarzy, liczba autorów, aktywność miesięczna, długość komentarzy, score, najaktywniejsi autorzy. |
@@ -59,7 +57,11 @@ Każdy notebook zapisuje wyniki do `outputs/figures` oraz `outputs/reports`. Pli
 
 ## Dane
 
-Dane pochodzą z Reddita i obejmują komentarze użytkowników z czterech społeczności muzycznych:
+Surowe dane wykorzystywane w projekcie nie są częścią repozytorium ze względu na ich rozmiar. Komentarze Reddita zostały pobrane z publicznego archiwum Reddit Comments Archive:
+
+https://the-eye.eu/
+
+Dane obejmują komentarze użytkowników z czterech społeczności muzycznych:
 
 - `r/hiphopheads`,
 - `r/popheads`,
